@@ -5,7 +5,7 @@ import SearchBar from './components/SearchBar';
 import Countries from './components/CountriesGrid'
 import FilterByRegion from './components/FilterByRegion';
 import CountryDetails from './components/CountryDetails';
-import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 function App() {
