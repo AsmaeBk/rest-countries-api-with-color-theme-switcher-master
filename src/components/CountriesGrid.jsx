@@ -3,7 +3,8 @@ const API_URL = 'https://restcountries.com/v3.1/all?fields=name,cca3,population,
 import './CountriesGrid.css'
 import clsx from 'clsx';
 import '../index.css'
-export default function ContriesGrid({theme, loadRegions, region}) {
+import { Link } from 'react-router-dom';
+export default function ContriesGrid({theme, loadRegions, region, searchTerm}) {
 
     const [countries, setCountries] = useState([]);
     
@@ -48,23 +49,32 @@ export default function ContriesGrid({theme, loadRegions, region}) {
             >{error.message}</h1> :
                 countries.filter(
                     (country)=> { 
-                       return country.region === region || region === 'all' || region === 'filterByRegion'
+                      const matchesRegion = region === 'all' || 
+                           region === 'filterByRegion' || 
+                           country.region === region;
+
+                    const matchesSearch = searchTerm === '' || 
+                        country.name.common.toLowerCase().includes(searchTerm.toLowerCase());
+
+                    return matchesRegion && matchesSearch;
                     }
                 )
                 .map( 
                     (country)=> {
-                           console.log("Region : "+region)
-                      return( <article key={country.cca3}  className={clsx('countries-article', {
-                            'dark-theme-element': theme === 'dark-theme',
-                            'light-theme-element': theme === 'light-theme',
-                            })} >
-                                                        
-                                <img src={country.flags.png}/>
-                                <h1>{country.name.common}</h1>
-                                <h2>Population: <span>{country.population.toLocaleString()}</span></h2>
-                                <h2>Region: <span>{country.region}</span></h2>
-                                <h2>Capital: <span>{country.capital?.[0] || 'N/A'}</span></h2>
-                            </article>  )
+                      return( <Link key={country.cca3} to={`/country/${country.cca3}`} >
+                            <article key={country.cca3}  className={clsx('countries-article', {
+                                'dark-theme-element': theme === 'dark-theme',
+                                'light-theme-element': theme === 'light-theme',
+                                })} >
+                                                            
+                                    <img src={country.flags.png}/>
+                                    <h1>{country.name.common}</h1>
+                                    <h2>Population: <span>{country.population.toLocaleString()}</span></h2>
+                                    <h2>Region: <span>{country.region}</span></h2>
+                                    <h2>Capital: <span>{country.capital?.[0] || 'N/A'}</span></h2>
+                                </article> 
+                        </Link> 
+                            )
                         
                     }
 
