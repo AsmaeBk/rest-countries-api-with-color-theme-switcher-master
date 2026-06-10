@@ -1,0 +1,35 @@
+.countries-container  {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 75px; 
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 40px;
+    justify-content: center;
+    margin: 40px auto 40px auto;
+}
+
+
+.countries-article {
+    border-radius: 6px;
+    padding-bottom: 30px;
+}
+
+.countries-article img{
+  width: 100%;
+  object-fit: contain;
+  border-radius: 6px 6px 0 0 ;
+}
+.countries-article h1,h2{
+  margin: 20px;
+  font-size: 15px;
+}
+.countries-article h1 {
+    font-weight: 800;
+}
+.countries-article h2 {
+    font-weight: normal;
+}
+.countries-article span {
+    font-weight: 100;
+}

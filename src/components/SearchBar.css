@@ -1,0 +1,36 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap : 20px;
+    box-shadow: 0px 1px 10px rgb(188, 185, 185);
+    margin: 20px;
+    margin-top: 40px;
+    padding-left: 40px;
+    border-radius: 5px;
+    min-width: 200px;
+    max-width: 700px;
+    width: auto;
+}
+.search-icon {
+    color: hsl(0, 0%, 50%);
+}
+input {
+    
+    color: hsl(0, 0%, 50%);
+    border: none;
+    margin: 20px;
+    outline: none;
+}
+
+.box-shadow-dark {
+    box-shadow:none;
+}
+
+@media (min-width:700px) {
+    .search-bar {
+        width: 500px;
+        margin: 0px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

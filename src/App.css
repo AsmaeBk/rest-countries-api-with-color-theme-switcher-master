@@ -1,0 +1,19 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 264px;
+}
+.search-filter{
+    width: 100%;
+    margin: 40px auto 40px auto;
+}
+
+@media screen and (min-width:700px) {
+    .search-filter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

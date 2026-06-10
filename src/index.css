@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%; 
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+
+.light-theme{
+  background-color: hsl(0, 0%, 96%);
+  color: hsl(200, 15%, 8%);
+}
+.dark-theme{
+  background-color: hsl(207, 26%, 17%);
+  color: hsl(0, 100%, 100%);
+}
+
+.dark-theme-element{
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 100%, 100%);
+}
+.light-theme-element {
+  background-color: hsl(0, 100%, 100%);
+
+}
