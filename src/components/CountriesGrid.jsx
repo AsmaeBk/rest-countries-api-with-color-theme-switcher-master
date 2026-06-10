@@ -28,8 +28,8 @@ export default function ContriesGrid({theme, loadRegions, region, searchTerm}) {
                 }
                 
             } catch (error) {
-                setError(error)
-                console.log(`Failed fetch countries ${error}`)   
+                setError(error.message)
+                console.log(error.message)   
             } finally {
                 setIsLoading(false)
             }
@@ -42,7 +42,7 @@ export default function ContriesGrid({theme, loadRegions, region, searchTerm}) {
         <section className="countries-container">
             { isLoading ? <h1 style={{
                 fontStyle:'italic'
-            }}>Loading...</h1>  : error != null ?<h1 style={{
+            }}>Loading...</h1>  : error !== null ?<h1 style={{
                
                 color: 'red'
             }}
@@ -67,7 +67,7 @@ export default function ContriesGrid({theme, loadRegions, region, searchTerm}) {
                                 'light-theme-element': theme === 'light-theme',
                                 })} >
                                                             
-                                    <img src={country.flags.png}/>
+                                    <img src={country.flags.png} alt={`Flag of ${country.name.common}`}/>
                                     <h1>{country.name.common}</h1>
                                     <h2>Population: <span>{country.population.toLocaleString()}</span></h2>
                                     <h2>Region: <span>{country.region}</span></h2>

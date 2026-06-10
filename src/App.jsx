@@ -15,7 +15,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   function toggleTheme(){
   
-    setTheme(prev => prev ==="light-theme"?"dark-theme" :"light-theme")
+    setTheme(prev => prev === "light-theme" ? "dark-theme" : "dark-theme")
 
   }
 

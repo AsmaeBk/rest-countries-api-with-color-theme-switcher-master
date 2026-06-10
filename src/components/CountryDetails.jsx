@@ -77,6 +77,7 @@ export default function CountryDetails({ theme }) {
                 {country.borders.map(border => (
                   <button 
                     key={border} 
+                    type="button"
                     className={`border-btn ${theme}-element`}
                   >
                     {border}

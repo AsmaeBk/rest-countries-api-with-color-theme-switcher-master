@@ -1,6 +1,6 @@
 .country-details {
   padding: 4rem 5%;
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
   min-height: 100vh;
 }
@@ -96,7 +96,7 @@
   font-size: 1rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 43.75rem) {
   .details-grid {
     grid-template-columns: 1fr;
     gap: 3rem;

@@ -4,9 +4,14 @@ export default function FilterByRegion({regions, theme, chooseFilter}) {
 
     return (
         <div className={clsx('filter',`${theme}-element`,{
-            'box-shadow-dark': theme == 'dark-theme'
+            'box-shadow-dark': theme === 'dark-theme'
         })}>  
-            <select defaultValue="filterByRegion" onChange={(event)=>chooseFilter(event.target.value)} className={`${theme}-element`} >
+            <select 
+                defaultValue="filterByRegion" 
+                onChange={(event)=>chooseFilter(event.target.value)} 
+                className={`${theme}-element`} 
+                aria-label="Filter by region"
+            >
                 
                 <option value="filterByRegion" hidden>Filter By Region</option>
                 {
