@@ -27,9 +27,9 @@ export default function ContriesGrid({theme, loadRegions, region, searchTerm}) {
                     loadRegions(data)
                 }
                 
-            } catch (error) {
-                setError(error.message)
-                console.log(error.message)   
+            } catch (err) {
+                setError(err.message)
+                console.log(err.message)   
             } finally {
                 setIsLoading(false)
             }

@@ -5,7 +5,7 @@ export default function Header({toggleTheme, theme}){
     return(
         <header className={`${theme}-element`} >
             <h1>Where in the world?</h1>
-            <button className={`${theme}-element`} onClick={toggleTheme}>
+            <button className={`${theme}-element`} onClick={toggleTheme} type="button">
                 <FaRegMoon />
                 <span>Dark Mode</span>
                 </button>
