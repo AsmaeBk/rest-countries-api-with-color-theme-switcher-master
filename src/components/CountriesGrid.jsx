@@ -40,12 +40,7 @@ export default function ContriesGrid({theme, loadRegions, region, searchTerm}) {
  
     return (
         <section className="countries-container">
-            { isLoading ? <h1 style={{
-                fontStyle:'italic'
-            }}>Loading...</h1>  : error !== null ?<h1 style={{
-               
-                color: 'red'
-            }}
+            { isLoading ? <h1>Loading...</h1>  : error !== null ?<h1
             >{error.message}</h1> :
                 countries.filter(
                     (country)=> { 

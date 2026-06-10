@@ -19,8 +19,8 @@ function App() {
 
   }
 
-  function chooseFilter(region){
-    setRegion(region);
+  function chooseFilter(selectedRegion){
+    setRegion(selectedRegion);
   }
   function loadRegions(data){
     setRegions([...new Set(data.map((country=>country.region)))])
